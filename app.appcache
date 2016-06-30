@@ -1,0 +1,72 @@
+CACHE MANIFEST 
+# v201603091050
+# ===========cache static resouce
+# p1
+img/p1/bg.png
+img/p1/e-1.png
+img/p1/e-2.png
+img/p1/e-3.png
+img/p1/e-4.png
+
+# p2
+img/p2/bg.png
+img/p2/e-1.png
+
+# p3
+img/p3/bg.png
+img/p3/e-1.png
+img/p3/e-2.png
+img/p3/e-3.png
+
+# p4
+img/p4/bg.png
+img/p4/e-1.png
+img/p4/e-2.png
+img/p4/e-3.png
+img/p4/e-4.png
+img/p4/e-5.png
+
+# p5
+img/p5/bg.png
+img/p5/e-1.png
+img/p5/e-2.png
+
+# p6
+img/p6/bg.png
+img/p6/e-1.png
+img/p6/e-2.png
+img/p6/e-3.png
+
+# other
+img/share-icon.jpg
+img/transparent.png
+
+
+
+# css
+css/app.css
+
+# js
+js/motion/landscape.min.js
+js/motion/loader.min.js
+js/motion/overlay.min.js
+js/motion/film.min.js
+js/swiper/swiper.animate1.0.2.min.js
+js/swiper/swiper.min.js
+js/zepto/zepto.min.js
+js/app.js
+
+
+
+# ===========Use from network if available 
+NETWORK: 
+db
+tracking
+weChat
+http://res.wx.qq.com
+http://open.weixin.qq.com
+https://api.weixin.qq.com
+http://wx.qlogo.cn
+
+# ===========Fallback content 
+FALLBACK: 

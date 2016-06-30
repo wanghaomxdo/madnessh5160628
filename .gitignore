@@ -1,0 +1,4 @@
+#ignore files
+weChat/weChatId.php
+wxpay/cert/*
+task.text

@@ -3,70 +3,70 @@
 <?php
     session_start();
 
-//     $_SESSION['url'] = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"];
-//     if(!isset($_SESSION["openid"]) && !isset($_SESSION["headimgurl"]) && !isset($_SESSION["nickname"]))
-//     {
-//         include_once 'weChat/weChatAutho.php';
-//     }else
-//     {
-//         // userinfo
-//         // echo 'openid:'.$_SESSION['openid'] . '<br />';
-//         // echo 'headimgurl:'.$_SESSION['headimgurl'] . '<br />';
-//         // echo 'nickname:'.$_SESSION['nickname'] . '<br />';
-//     }
-    // for debug
-    $_SESSION['openid'] = 'o1zitjlK5QY7rH113wDe2f96ThUtO';
-    $_SESSION['headimgurl'] = 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBUibh2dXOLU3DkiblnVLNCfOb6D6ViawSD8mtPSFl86lVg59cdSIZ7u40lBLPr3ibvVc1xynrpn2U2UQ/0';
-    $_SESSION['nickname'] = 'coton_chen';
+     $_SESSION['url'] = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"];
+     if(!isset($_SESSION["openid"]) && !isset($_SESSION["headimgurl"]) && !isset($_SESSION["nickname"]))
+     {
+         include_once 'weChat/weChatAutho.php';
+     }else
+     {
+         // userinfo
+         // echo 'openid:'.$_SESSION['openid'] . '<br />';
+         // echo 'headimgurl:'.$_SESSION['headimgurl'] . '<br />';
+         // echo 'nickname:'.$_SESSION['nickname'] . '<br />';
+     }
+//    // for debug
+//    $_SESSION['openid'] = 'o1zitjlK5QY7rH113wDe2f96ThUtO';
+//    $_SESSION['headimgurl'] = 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBUibh2dXOLU3DkiblnVLNCfOb6D6ViawSD8mtPSFl86lVg59cdSIZ7u40lBLPr3ibvVc1xynrpn2U2UQ/0';
+//    $_SESSION['nickname'] = 'coton_chen';
 
 
-//ini_set('date.timezone','Asia/Shanghai');
-////error_reporting(E_ERROR);
-//require_once "wxpay/lib/WxPay.Api.php";
-//require_once "wxpay/pub/WxPay.JsApiPay.php";
-//require_once 'wxpay/pub/log.php';
-////打印输出数组信息
-////function printf_info($data)
-////{
-////    foreach($data as $key=>$value){
-////        echo "<font color='#00ff55;'>$key</font> : $value <br/>";
-////    }
-////}
-//
-//// for debug
-//// http://localhost/molirunh5160303/wxpay/pub/pay.php?grouptype=1&name=coton&cardnumber=420682199101090014&phone=13564137185&packagetype=0
-///*$jsApiParameters = '{"appId":"wxc6d26827fed8ccc6","nonceStr":"20kp5is34n5hsho45ewo8353yaekczwy","package":"prepay_id=wx20160304155852702e4032000011927921","signType":"MD5","timeStamp":"1457078332","paySign":"8F0E49A6C0641B4B1C46AEF920A359AC"}';*/
-//
-//
-//$openid     = $_SESSION['openid'];
-//$nickname   = $_SESSION['nickname'];
-//
-//// for debug
-////$_SESSION['openid'] = 'o1zitjlK5QY7rH113wDe2f96ThUtO';
-////    $_SESSION['headimgurl'] = 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBUibh2dXOLU3DkiblnVLNCfOb6D6ViawSD8mtPSFl86lVg59cdSIZ7u40lBLPr3ibvVc1xynrpn2U2UQ/0';
-////    $_SESSION['nickname'] = 'coton_chen';
-//
-//
-////①、获取用户openid
-//$tools       = new JsApiPay();
-//$outtradeno  = WxPayConfig::MCHID.date("YmdHis");
-//
-////②、统一下单
-//$input = new WxPayUnifiedOrder();
-//$input->SetBody("Madness Entrance Fee");
-//$input->SetAttach($phone);
-//$input->SetOut_trade_no($outtradeno);
-//$input->SetTotal_fee("15000");
-//$input->SetTime_start(date("YmdHis"));
-//$input->SetTime_expire(date("YmdHis", time() + 600));
-//$input->SetGoods_tag("Madness Entrance Fee");
-//$input->SetNotify_url("https://pay.wechat.createcdigital.com/madnessh5160628/wxpay/pub/notify.php");
-//$input->SetTrade_type("JSAPI");
-//$input->SetOpenid($openid);
-//$order = WxPayApi::unifiedOrder($input);
-//// echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
-//// printf_info($order);
-//$jsApiParameters = $tools->GetJsApiParameters($order);
+ini_set('date.timezone','Asia/Shanghai');
+//error_reporting(E_ERROR);
+require_once "wxpay/lib/WxPay.Api.php";
+require_once "wxpay/pub/WxPay.JsApiPay.php";
+require_once 'wxpay/pub/log.php';
+//打印输出数组信息
+//function printf_info($data)
+//{
+//    foreach($data as $key=>$value){
+//        echo "<font color='#00ff55;'>$key</font> : $value <br/>";
+//    }
+//}
+
+// for debug
+// http://localhost/molirunh5160303/wxpay/pub/pay.php?grouptype=1&name=coton&cardnumber=420682199101090014&phone=13564137185&packagetype=0
+/*$jsApiParameters = '{"appId":"wxc6d26827fed8ccc6","nonceStr":"20kp5is34n5hsho45ewo8353yaekczwy","package":"prepay_id=wx20160304155852702e4032000011927921","signType":"MD5","timeStamp":"1457078332","paySign":"8F0E49A6C0641B4B1C46AEF920A359AC"}';*/
+
+
+$openid     = $_SESSION['openid'];
+$nickname   = $_SESSION['nickname'];
+
+// for debug
+//$_SESSION['openid'] = 'o1zitjlK5QY7rH113wDe2f96ThUtO';
+//    $_SESSION['headimgurl'] = 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBUibh2dXOLU3DkiblnVLNCfOb6D6ViawSD8mtPSFl86lVg59cdSIZ7u40lBLPr3ibvVc1xynrpn2U2UQ/0';
+//    $_SESSION['nickname'] = 'coton_chen';
+
+
+//①、获取用户openid
+$tools       = new JsApiPay();
+$outtradeno  = WxPayConfig::MCHID.date("YmdHis");
+
+//②、统一下单
+$input = new WxPayUnifiedOrder();
+$input->SetBody("Madness Entrance Fee");
+$input->SetAttach($phone);
+$input->SetOut_trade_no($outtradeno);
+$input->SetTotal_fee("15000");
+$input->SetTime_start(date("YmdHis"));
+$input->SetTime_expire(date("YmdHis", time() + 600));
+$input->SetGoods_tag("Madness Entrance Fee");
+$input->SetNotify_url("https://pay.wechat.createcdigital.com/madnessh5160628/wxpay/pub/notify.php");
+$input->SetTrade_type("JSAPI");
+$input->SetOpenid($openid);
+$order = WxPayApi::unifiedOrder($input);
+// echo '<font color="#f00"><b>统一下单支付单信息</b></font><br/>';
+// printf_info($order);
+$jsApiParameters = $tools->GetJsApiParameters($order);
 
 
 //③、在支持成功回调通知中处理成功之后的事宜，见 notify.php

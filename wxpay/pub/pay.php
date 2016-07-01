@@ -43,7 +43,7 @@ $input->SetTotal_fee("15000");
 $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));
 $input->SetGoods_tag("Madness Entrance Fee");
-$input->SetNotify_url("https://pay.wechat.createcdigital.com/madnessh5160506/wxpay/pub/notify.php");
+$input->SetNotify_url("https://pay.wechat.createcdigital.com/madnessh5160628/wxpay/pub/notify.php");
 $input->SetTrade_type("JSAPI");
 $input->SetOpenid($openid);
 $order = WxPayApi::unifiedOrder($input);

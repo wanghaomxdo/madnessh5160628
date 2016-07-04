@@ -9,7 +9,7 @@ app.template.loader.init= function(){
     // loader
     var getSource = function(){
         var res = [];
-        res.push("img/loading/e-1.jpg");
+        res.push("img/loading/e-1.png");
         res.push("img/p1/bg.gif");
         res.push("img/share-icon1.jpg");
         res.push("img/transparent.png");
@@ -25,7 +25,7 @@ app.template.loader.init= function(){
         onLoading : function(count,total){
             //console.log('onloading:single loaded:',arguments)
             $(".loader h1").html(' '+Math.round(count/total*100)+'%');
-            $(".loader .l-7").height(230-(Math.round(count/total*100)*2.3));
+            $(".loader .l-7").height(190-(Math.round(count/total*100)*1.9));
         },
         onComplete : function(time){
             console.log('oncomplete:all source loaded:',arguments);
@@ -278,7 +278,7 @@ app.p1.bind_touch_event = function(){
                 $('#e3-2').text(r.name);
                 $('#e3-3').text(r.email);
                 $('#e3-4').text(r.phone);
-                $('.e3-1').css("border-color","#c8225e");
+                $('.e3-1').css("border-color","#ff0000");
                 app.template.swiper.to(2);
             }else{
                 console.log("参加用户已选线上支付方式");
@@ -368,17 +368,17 @@ $(".p2 .e2-1").on("touchend",function(){
     var openid = $OPENID;
     var nickname = $NICKNAME;
     var headimgurl = $HEADIMGURL;
-    if(payfor == 'pay for weichat'){
-        app.p2.callpay();
-    }else {
-        $.post("db/adduser.php", {name: name,email: email,phone: phone,whoyouare: whoyouare,lookingforshmadness: lookingforshmadness,openid:openid,nickname:nickname,headimgurl:headimgurl},function(r){
-            if(r.code == "0" || r.code == "1"){
+    $.post("db/adduser.php", {name: name,email: email,phone: phone,whoyouare: whoyouare,lookingforshmadness: lookingforshmadness,openid:openid,nickname:nickname,headimgurl:headimgurl},function(r){
+        if(r.code == "0" || r.code == "1"){
+            if(payfor == 1){
+                app.p2.callpay();
+            }else {
                 app.p2.post_addusernum();
-            }else{
-                showMask('Please try again.');
             }
-        },'json');
-    }
+        }else{
+            showMask('Please try again.');
+        }
+    },'json');
 });
 
 app.p2.post_addusernum = function () {
@@ -387,12 +387,46 @@ app.p2.post_addusernum = function () {
     var openid = $OPENID;
     $.post("db/addusernum.php", {openid: openid,numbers: numbers,outtradeno:'',paystatus:3},function(r){
         if(r.code == 0){
-            $('.e3-1').css("border-color","#c8225e");
+            $('.e3-1').css("border-color","#ff0000");
             app.template.swiper.to(2);
         }else{
             alert('Please try again.');
         }
     },'json');
+};
+
+app.p2.callpay = function(){
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', app.p2.jsapicall, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', app.p2.jsapicall);
+            document.attachEvent('onWeixinJSBridgeReady', app.p2.jsapicall);
+        }
+    }else{
+        app.p2.jsapicall();
+    }
+};
+app.p2.jsapicall = function(){
+    WeixinJSBridge.invoke(
+        'getBrandWCPayRequest', $JSAPIPARAMETERS, function(res){
+            if(res.err_msg == "get_brand_wcpay_request:ok" )
+            {
+                $.post("db/finduser.php", {openid: $OPENID}, function(data){
+                    if(data.code==0)
+                    {
+                        app.template.swiper.to(2);
+                    }else{
+                        alert("Payment Declined! Please contact us!");
+                    }
+
+
+                },'json');
+            }else{
+                alert("Payment Declined!");
+            }
+        }
+    );
 };
 
 var success = false;
@@ -426,40 +460,6 @@ app.p2.enabled_alltextinput = function(){
     $(".e2-3").removeAttr("disabled");
     $(".e2-4").removeAttr("disabled");
     $(".e2-5").removeAttr("disabled");
-};
-
-app.p2.callpay = function(){
-    if (typeof WeixinJSBridge == "undefined"){
-        if( document.addEventListener ){
-            document.addEventListener('WeixinJSBridgeReady', app.p2.jsapicall, false);
-        }else if (document.attachEvent){
-            document.attachEvent('WeixinJSBridgeReady', app.p2.jsapicall);
-            document.attachEvent('onWeixinJSBridgeReady', app.p2.jsapicall);
-        }
-    }else{
-        app.p2.jsapicall();
-    }
-};
-app.p2.jsapicall = function(){
-    WeixinJSBridge.invoke(
-        'getBrandWCPayRequest', $JSAPIPARAMETERS, function(res){
-            if(res.err_msg == "get_brand_wcpay_request:ok" )
-            {
-                $.post("../../db/finduser.php", {openid: $OPENID}, function(data){
-                    if(data.code==0)
-                    {
-                        app.template.swiper.to(2);
-                    }else{
-                        alert("Payment Declined! Please contact us!");
-                    }
-
-
-                },'json');
-            }else{
-                alert("Payment Declined!");
-            }
-        }
-    );
 };
 
 app.p2.destory = function(){};
@@ -526,19 +526,10 @@ fuckandroid.app.p1.bind_touch_event = function(){
                 app.p2.destory();
                 app.p3.init();
                 break;
-            // case 3:
-            //     app.p3.destory();
-            //     //app.p4.init();
-            //     break;
-            // case 4:
-            //     app.p5.init();
-            //     break;
         }
     };
      app.p1.bind_touch_event();
      app.p2.bind_touch_event();
-     app.p3.bind_touch_event();
-     //app.p4.bind_touch_event();
      app.debug.enable = false;
 })();
 

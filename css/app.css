@@ -200,16 +200,16 @@ body {
 
 .l-6 {
 	position: absolute;
-	top: 290px;
+	top: 340px;
 	left: 0px;
 	z-index: 100;
 }
 
 .l-7 {
 	position: absolute;
-	top: 290px;
+	top: 340px;
 	width: 640px;
-	height:230px;
+	height:190px;
 	z-index: 300;
 	background: #202024;
 }
@@ -269,7 +269,7 @@ body {
 
 .p2 .e2-1 {
 	position: absolute;
-	top: 980px;
+	top: 900px;
 	left: 220px;
 	height: 70px;
 	width: 200px;
@@ -303,26 +303,26 @@ body {
 
 .p2 .e2-3 {
 	position: absolute;
-	top: 270px;
+	top: 237px;
 	left: 113px;
 	z-index: 1000;
 }
 
 .p2 .e2-4 {
 	position: absolute;
-	top: 390px;
+	top: 352px;
 	left: 113px;
 }
 
 .p2 .e2-5 {
 	position: absolute;
-	top: 518px;
+	top: 472px;
 	left: 113px;
 }
 
 .p2 .e2-6 {
 	position: absolute;
-	top: 645px;
+	top: 592px;
 	left: 113px;
 	padding-left: 55px;
              
@@ -335,13 +335,13 @@ body {
 
 .p2 .e2-7 {
 	position: absolute;
-	top: 769px;
+	top: 710px;
 	left: 113px;
 	padding-left: 55px;
 }
 .p2 .e2-8 {
 	position: absolute;
-	top: 895px;
+	top: 830px;
 	left: 113px;
 	padding-left: 55px;
 }
@@ -354,7 +354,7 @@ body {
 
 .p3 .e3-1 {
 	position: absolute;
-	top: 640px;
+	top: 605px;
 	left: 195px;
 	width: 223px;
 	height: 223px;
@@ -363,13 +363,13 @@ body {
 
 .p3 .e3-2 {
 	position: absolute;
-	top: 375px;
+	top: 368px;
 	left: 100px;
 	color: #a6a6a8;
 }
 .p3 .e3-3 {
 	position: absolute;
-	top: 440px;
+	top: 432px;
 	left: 100px;
 	color: #a6a6a8;
 }
@@ -378,6 +378,25 @@ body {
 	top: 505px;
 	left: 100px;
 	color: #a6a6a8;
+}
+
+.in-2 {
+	position: absolute;
+	font-family: Microsoft YaHei, "微软雅黑", "黑体", "宋体", Arial;
+	height: 49px;
+	width: 410px;
+	margin-left: 0px;
+	margin-top: 0px;
+	font-size: 35px;
+	font-weight: normal;
+	background-color: transparent;
+	color: #A57D2F;
+	border: 0;
+	border-color: transparent;
+	text-decoration: none;
+	padding-left: 15px;
+	-webkit-appearance: none;
+
 }
 
 

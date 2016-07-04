@@ -38,7 +38,7 @@ if($stmt1 = $mysqli->prepare("SELECT id FROM admin WHERE openid=?")) {
         $stmt1->close();
         // response json data
         if ($id == null || $id == 0) {
-            $topurl='http://'.$_SERVER['SERVER_NAME'].'/madnessh5160506/';
+            $topurl='http://'.$_SERVER['SERVER_NAME'].'/madnessh5160628/';
             header("Location:".$topurl);
             exit();
         }else{
